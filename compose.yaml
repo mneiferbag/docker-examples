@@ -1,0 +1,10 @@
+name: docker-example
+
+services:
+  http:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      # See https://docs.docker.com/reference/compose-file/interpolation/
+      - "./volume:/usr/src/app/${MAN_EXP_DIR:-public}"
